@@ -78,7 +78,8 @@ export function colors(darkMode: boolean): Colors {
     red2: '#F82D3A',
     green1: '#27AE60',
     yellow1: '#FFE270',
-    yellow2: '#F3841E'
+    yellow2: '#F3841E',
+    border: '#ececed'
 
     // dont wanna forget these blue yet
     // blue4: darkMode ? '#153d6f70' : '#C4D9F8',
@@ -169,37 +170,11 @@ export const TYPE = {
 }
 
 export const FixedGlobalStyle = createGlobalStyle`
-@font-face {
-  font-family: "SF Pro Rounded";
-  src: url("../assets/fonts/SF-Pro-Rounded-Bold.woff2") format("woff2");
-  font-weight: 700;
-}
-@font-face {
-  font-family: "SF Pro Rounded";
-  src: url("../assets/fonts/SF-Pro-Rounded-Semibold.woff2") format("woff2");
-  font-weight: 600;
-}
-@font-face {
-  font-family: "SF Pro Rounded";
-  src: url("../assets/fonts/SF-Pro-Rounded-Medium.woff2") format("woff2");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "SF Pro Rounded";
-  src: url("../assets/fonts/SF-Pro-Rounded-Regular.woff2") format("woff2");
-  font-weight: normal;
-}
+
 
 html, input, textarea, button {
-  font-family: 'SF Pro Rounded', sans-serif;
   letter-spacing: -0.018em; 
   font-display: fallback;
-}
-@supports (font-variation-settings: normal) {
-
-  html, input, textarea, button {
-    font-family: 'SF Pro Rounded', sans-serif;
-  }
 }
 
 html,
@@ -218,7 +193,6 @@ button {
 
 html {
   font-size: 16px;
-  font-variant: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -228,7 +202,7 @@ html {
 export const ThemedGlobalStyle = createGlobalStyle`
 html {
   color: ${({ theme }) => theme.text1};
-  background-color: ${({ theme }) => theme.bg2};
+  background-color: ${({ theme }) => theme.bg1};
 }
 
 body {
@@ -245,12 +219,12 @@ body {
   content: " ";
   backdrop-filter: blur(50px);
   background-image: ${({ theme }) =>
-    `radial-gradient(50% 50% at 50% 50%, ${transparentize(0.87, theme.primary1)} 0%, ${transparentize(
+    `radial-gradient(50% 50% at 50% 50%, ${transparentize(0.9, theme.primary1)} 0%, ${transparentize(
       1,
       theme.bg1
     )} 100%)`};
-  position: absolute;
-  top: -300px;
+  position: fixed;
+  top: -100px;
   left: 50%;
   transform: translateX(-50%)
 }

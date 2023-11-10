@@ -19,13 +19,12 @@ import { RowBetween } from '../Row'
 import Web3Status from '../Web3Status'
 
 const HeaderFrame = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  width: 100%;
-  top: 0;
-  position: absolute;
+  margin-bottom: 50px;
   z-index: 2;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     padding: 12px 0 0 0;

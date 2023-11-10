@@ -43,6 +43,7 @@ export interface Colors {
   green1: Color
   yellow1: Color
   yellow2: Color
+  border: Color
 }
 
 export interface Grids {
